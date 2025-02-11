@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AGROGENIX AI - Text to Video</title>
+    <style>
+        body {
+            font-family: 'Dancing Script', cursive;
+            margin: 20px;
+            background-image: url(crop2.jpg);
+            background-size: cover;
+        }
+
+        #video-container {
+            width: 1700px;
+            height: 360px;
+            margin-bottom: 20px;
+        }
+
+        #transcript-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Text to Video</h1>
+
+    <div id="video-container">
+        <video id="video" width="640" height="360" controls></video>
+    </div>
+
+    <div id="transcript-container">
+        <h2>Summary</h2>
+        <p id="transcript"></p>
+    </div>
+
+    <script>
+        // Placeholder for video generation logic (replace with your actual implementation)
+        const videoUrl = "path/to/your/generated/video.mp4"; 
+
+        const video = document.getElementById('video');
+        video.src = videoUrl;
+
+        // Placeholder for transcript generation logic (replace with your actual implementation)
+        const transcript = "This is a sample summarized transcript of the generated video."; 
+        document.getElementById('transcript').textContent = transcript; 
+    </script>
+      <section>
+        <h2>Feedback</h2>
+        <textarea rows="3" placeholder="Provide your feedback here"></textarea>
+        <button>Submit Feedback</button>
+    </section>
+</body>
+</html>

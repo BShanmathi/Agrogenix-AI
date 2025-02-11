@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AGROGENIX AI - Language Translation</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            font-family: 'Dancing Script', cursive;
+            background-image: url(crop2.jpg);
+            background-size: cover;
+        }
+
+        .language-select {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Language Translation</h1>
+
+    <div class="language-select">
+        <label for="source-language">Source Language:</label>
+        <select id="source-language">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            {/* Add more language options as needed */}
+        </select>
+    </div>
+
+    <div class="language-select">
+        <label for="target-language">Target Language:</label>
+        <select id="target-language">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            {/* Add more language options as needed */}
+        </select>
+    </div>
+
+    <textarea id="source-text" placeholder="Enter text to translate"></textarea>
+
+    <button id="translate-button">Translate</button>
+
+    <textarea id="translated-text" placeholder="Translated Text" readonly></textarea>
+
+    <script>
+        // Placeholder for translation logic (replace with your actual implementation)
+        const translateButton = document.getElementById('translate-button');
+        translateButton.addEventListener('click', () => {
+            const sourceLanguage = document.getElementById('source-language').value;
+            const targetLanguage = document.getElementById('target-language').value;
+            const sourceText = document.getElementById('source-text').value;
+
+            // Call your translation API or function here
+            const translatedText = translate(sourceText, sourceLanguage, targetLanguage); 
+
+            document.getElementById('translated-text').value = translatedText;
+        });
+
+        // Example translation function (replace with your actual implementation)
+        function translate(text, sourceLang, targetLang) {
+            // Placeholder logic - replace with your actual translation API call
+            if (sourceLang === 'en' && targetLang === 'es') {
+                return "Traducción de texto en español";
+            } else {
+                return "Translation not supported yet.";
+            }
+        }
+    </script>
+
+</body>
+</html>

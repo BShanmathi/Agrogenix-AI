@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AGROGENIX AI - The Next Generation AI Tool for Agro World</title>
+    <style>
+        body {
+            font-family: 'Dancing Script', cursive;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background-image: url(crop2.jpg);
+            background-size: cover;
+        }
+        header {
+            
+            color: #0f0e0e;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            color: #0f0e0e;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-around;
+        }
+        main {
+            margin: auto;
+            max-width: 800px;
+            color: rgb(13, 13, 13);
+            
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: rgb(7, 7, 7);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AGROGENIX AI</h1>
+        <p>The Next Generation AI Tool for Agro World</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#" id="loginLink">Login</a> 
+        <a href="#" id="createAccountLink">Create Account</a>
+    </nav>
+          
+    <main>
+        <section>
+            <h2>Dashboard</h2>
+            <p>Welcome to your AGROGENIX AI dashboard.</p>
+            <input type="text" placeholder="Search..." />
+        </section>
+        <div>
+            <button onclick="redirectTo('text_to_video.html')">Text to Video</button>
+            <button onclick="redirectTo('speech_to_video.html')">Speech to Video</button>
+            <button onclick="redirectTo('language_translation.html')">Language Translation</button>
+        </div>
+    
+        <script>
+            function redirectTo(page) {
+                window.location.href = page;
+            }
+        </script>
+        <section>
+            <h2>Input</h2>
+            <textarea rows="5" placeholder="Enter your text here"></textarea>
+            <button>Save</button>
+        </section>
+
+        
+    </main>
+   
+</body>
+</html>

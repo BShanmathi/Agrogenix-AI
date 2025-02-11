@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AGROGENIX AI - Speech to Video</title>
+    <style>
+        body {
+            background-image: url(crop2.jpg);
+            background-size: cover;
+            margin: 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        #speech-input {
+            margin-bottom: 20px;
+        }
+
+        #transcript-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        #video-container {
+            width: 640px;
+            height: 360px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Speech to Video</h1>
+
+    <div id="speech-input">
+        <button id="start-recording">Start Recording</button>
+        <button id="stop-recording">Stop Recording</button>
+    </div>
+
+    <div id="transcript-container">
+        <h2>Transcript</h2>
+        <p id="transcript"></p>
+    </div>
+
+    <div id="video-container">
+        <video id="video" width="640" height="360" controls></video>
+    </div>
+
+    <button id="generate-video">Generate Video</button>
+
+    <script>
+        // Placeholder for speech recognition logic (replace with your actual implementation)
+        let recognition;
+
+        const startRecordingBtn = document.getElementById('start-recording');
+        const stopRecordingBtn = document.getElementById('stop-recording');
+        const transcriptContainer = document.getElementById('transcript');
+        const generateVideoBtn = document.getElementById('generate-video');
+        const video = document.getElementById('video');
+
+        startRecordingBtn.addEventListener('click', () => {
+            if (!recognition) {
+                recognition = new webkitSpeechRecognition(); // Use the appropriate browser API
+                recognition.lang = 'en-US'; // Set the desired language
+
+                recognition.onresult = (event) => {
+                    const transcript = event.results[event.resultIndex][0].transcript;
+                    transcriptContainer.textContent = transcript;
+                };
+
+                recognition.onerror = (event) => {
+                    console.error("Speech recognition error:", event.error);
+                };
+            }
+
+            recognition.start();
+        });
+
+        stopRecordingBtn.addEventListener('click', () => {
+            if (recognition) {
+                recognition.stop();
+            }
+        });
+
+        generateVideoBtn.addEventListener('click', () => {
+            const transcriptText = transcriptContainer.textContent;
+
+            // Placeholder for video generation logic (replace with your actual implementation)
+            const videoUrl = "path/to/your/generated/video.mp4"; // Replace with the generated video URL
+
+            video.src = videoUrl;
+        });
+
+    </script>
+
+</body>
+</html>
